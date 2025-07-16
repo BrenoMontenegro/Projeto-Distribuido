@@ -27,7 +27,7 @@ public class ClienteMensageiro {
                 try {
                     servidor.enviarMensagem(dest, "[" + nome + "]: " + msg);
                 } catch (Exception e) {
-                    System.out.println("[CLIENTE] Erro ao enviar mensagem. Verifique a conexão.");
+                    System.out.println("[CLIENTE] Erro ao enviar mensagem. O servidor ou o distinatário foi desconectado.");
                 }
             }
 

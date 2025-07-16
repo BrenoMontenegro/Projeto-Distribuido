@@ -28,13 +28,16 @@ public class ServidorImpl extends UnicastRemoteObject implements Mensageiro {
             try {
                 cliente.receberMensagem(mensagem);
             } catch (RemoteException e) {
-                System.out.println("[SERVIDOR] Falha ao entregar mensagem para " + destinatario + ". Cliente será removido da lista.");
+                System.out.println("[SERVIDOR] O destinatário " + destinatario + " está offline. Removendo...");
                 clientes.remove(destinatario);
+                throw new RemoteException("Destinatário offline");
             }
         } else {
             System.out.println("[SERVIDOR] Cliente " + destinatario + " não encontrado.");
+            throw new RemoteException("Cliente não encontrado");
         }
     }
+
 
     @Override
     public void receberMensagem(String mensagem) throws RemoteException {
