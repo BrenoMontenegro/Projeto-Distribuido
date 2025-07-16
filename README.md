@@ -26,7 +26,7 @@ IDE Java (Eclipse, IntelliJ, VSCode, etc.) ou conhecimento para compilar via ter
 
 
 Compile o projeto:
-javac *.java
+javac common/*.java servidor/*.java cliente/*.java
 
 ### Inicie o registry RMI (em um terminal separado):
 rmiregistry
